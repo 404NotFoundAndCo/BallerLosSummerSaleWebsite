@@ -36,7 +36,13 @@
   
     <script src="module/commonUtils/commonUtils.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', setActiveButton);
+      document.addEventListener('DOMContentLoaded', () => {
+        setActiveButton();
+        const activeButton = sessionStorage.getItem('activeButton');
+        if (activeButton) {
+            document.querySelector(`nav a[href='${activeButton}']`)?.classList.add('active');
+        }
+        });
     </script>
 </body>
 </html>
