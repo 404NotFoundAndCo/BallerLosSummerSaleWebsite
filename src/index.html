@@ -1,1 +1,46 @@
-<!--ref issue #1->
+<!--ref issue #1-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über uns - Baller LOS</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body class="light-mode">
+    <header>
+        <div class="logo">
+          <img src="Images/Logo.png" alt="Baller LOS Logo">
+        </div>
+        <div class="header-right">
+          <nav>
+            <a href="#firma" onclick="loadIframeContent('module/company/company.html')">Firma</a>
+            <a href="#produkt" onclick="loadIframeContent('module/product/product.html')">Produkt</a>
+            <a href="#team" onclick="loadIframeContent('module/team/team.html')" class="active">Team</a>
+            <a href="#kontakt" onclick="loadIframeContent('module/contactForm/contactForm.html')">Kontakt</a>
+          </nav>
+          <button id="toggle-mode" class="lightbulb">💡</button>
+        </div>
+      </header>
+
+    <main>
+      <div class="iframe-container">
+        <iframe id="contentFrame" src="about:blank" width="100%" height="500" style="border:none;"></iframe>
+      </div>
+    </main>
+  
+    <footer>
+      <p>Copyright</p>
+      <a href="#impressum" onclick="loadIframeContent('impressum.html')">Impressum</a>
+      <a href="#datenschutz" onclick="loadIframeContent('datenschutz.html')">Datenschutz</a>
+    </footer>
+  
+    <script>
+      function loadIframeContent(page) {
+        document.getElementById('contentFrame').src = page;
+      }
+    </script>
+
+    <script src="module/commonUtils/commonUtils.js"></script>
+</body>
+</html>
