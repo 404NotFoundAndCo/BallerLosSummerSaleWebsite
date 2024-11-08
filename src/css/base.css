@@ -184,8 +184,8 @@ body.dark-mode footer a {
 }
 
 .buttonSubmit {
-    background-color: #5cb85c;
-    color: white;
+    background-color: #b3d7ff;
+    color: black;
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -193,7 +193,7 @@ body.dark-mode footer a {
     width: 100%;
 }
 .buttonSubmit:hover {
-    background-color: #4cae4c;
+    background-color: #3c82d1;
 }
 
 h1 {
