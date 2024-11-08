@@ -28,18 +28,8 @@ header {
     align-items: flex-end; /* Align the buttons to the right side */
 }
 
-button.lightbulb {
-    margin-top: 10px; /* Add some space above the button */
-}
-
-button.lightbulb.active {
-    background-color: #007aff;
-    color: white;
-    border-radius: 5px;
-}
-
 .logo img {
-    height: 100px;
+    height: 110px;
 }
 
 nav {
@@ -81,20 +71,19 @@ nav a.active {
 }
 
 .lightbulb {
-    font-size: 20px;
+    font-size: 40px;
     background: none;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: filter 0.3s;
 }
 
-.lightbulb:hover {
-    background-color: #f0f0f0;
-    border-radius: 5px;
+body.light-mode button.lightbulb {
+    filter: brightness(1.25);
 }
 
-.lightbulb:focus {
-    outline: 2px solid #007BFF;
+body.dark-mode button.lightbulb {
+    filter: brightness(0.5);
 }
 
 main {
