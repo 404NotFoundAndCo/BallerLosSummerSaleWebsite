@@ -16,7 +16,7 @@
           <nav>
             <a href="#firma" onclick="loadIframeContent('module/company/company.html')">Firma</a>
             <a href="#produkt" onclick="loadIframeContent('module/product/product.html')">Produkt</a>
-            <a href="#team" onclick="loadIframeContent('module/team/team.html')" class="active">Team</a>
+            <a href="#team" onclick="loadIframeContent('module/team/team.html')">Team</a>
             <a href="#kontakt" onclick="loadIframeContent('module/contactForm/contactForm.html')">Kontakt</a>
           </nav>
           <button id="toggle-mode" class="lightbulb">💡</button>
@@ -35,12 +35,6 @@
       <a href="#datenschutz" onclick="loadIframeContent('datenschutz.html')">Datenschutz</a>
     </footer>
   
-    <script>
-      function loadIframeContent(page) {
-        document.getElementById('contentFrame').src = page;
-      }
-    </script>
-
     <script src="module/commonUtils/commonUtils.js"></script>
 </body>
 </html>
