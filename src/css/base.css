@@ -1,154 +1,187 @@
-*
-  {
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+/* Base Styles */
+body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     transition: background-color 0.3s, color 0.3s;
-  }
-  
-  header {
+}
+
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     background-color: #b3d7ff;
-  }
-  
-  .header-right {
+}
+
+.header-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end; /* Align the buttons to the right side */
-  }
-  
-  button.lightbulb {
-    margin-top: 10px; /* Add some space above the button */
-  }
+}
 
-  .logo img {
+button.lightbulb {
+    margin-top: 10px; /* Add some space above the button */
+}
+
+button.lightbulb.active {
+    background-color: #007aff;
+    color: white;
+    border-radius: 5px;
+}
+
+.logo img {
     height: 100px;
-  }
-  
-  nav {
+}
+
+nav {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
     padding-right: 20px;
     margin-bottom: 10px;
-  }
-  
-  nav a {
+}
+
+nav a {
     margin: 0 10px;
     text-decoration: none;
     color: black;
     font-weight: bold;
-  }
-  
-  nav a.active {
+    padding: 10px;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+    border: none;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+    color: #007BFF;
+    border-radius: 5px;
+}
+
+nav a:focus {
+    outline: none;
+    background-color: #e6f7ff;
+    border-radius: 5px;
+}
+
+nav a.active {
     background-color: #007aff;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-  }
-  
-  .lightbulb {
+}
+
+.lightbulb {
     font-size: 20px;
     background: none;
     border: none;
     cursor: pointer;
-  }
-  
-  main {
+    transition: background-color 0.3s;
+}
+
+.lightbulb:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.lightbulb:focus {
+    outline: 2px solid #007BFF;
+}
+
+main {
     text-align: center;
     padding: 50px;
     flex: 1;
-  }
-  
-  main h1 {
+}
+
+main h1 {
     font-size: 36px;
     font-weight: bold;
-  }
-  
-  main h2 {
+}
+
+main h2 {
     font-size: 24px;
     font-weight: bold;
     margin-top: 10px;
-  }
-  
-  main p {
+}
+
+main p {
     font-size: 16px;
     margin: 20px 0;
-  }
-  
-  .team-icon img {
+}
+
+.team-icon img {
     width: 100px;
     margin-top: 20px;
-  }
-  
-  footer {
+}
+
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #b3d7ff;
     color: black;
-  }
-  
-  footer a {
+}
+
+footer a {
     margin-left: 10px;
     color: black;
     text-decoration: none;
-  }
-  
-  footer a:hover {
+    transition: color 0.3s;
+}
+
+footer a:hover {
     text-decoration: underline;
-  }
-  
-  /* Light Mode Styles */
-  body.light-mode {
+}
+
+/* Light Mode Styles */
+body.light-mode {
     background-color: white;
     color: black;
-  }
-  
-  body.light-mode nav a {
+}
+
+body.light-mode nav a {
     color: black;
-  }
-  
-  body.light-mode footer {
+}
+
+body.light-mode footer {
     background-color: #b3d7ff;
-  }
-  
-  /* Dark Mode Styles */
-  body.dark-mode {
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
     background-color: #1a1a1a;
     color: white;
-  }
-  
-  body.dark-mode header {
+}
+
+body.dark-mode header {
     background-color: #333;
-  }
-  
-  body.dark-mode nav a {
+}
+
+body.dark-mode nav a {
     color: white;
-  }
-  
-  body.dark-mode nav a.active {
+}
+
+body.dark-mode nav a.active {
     background-color: #007aff;
     color: white;
-  }
-  
-  body.dark-mode footer {
+}
+
+body.dark-mode footer {
     background-color: #333;
     color: white;
-  }
-  
-  body.dark-mode footer a {
+}
+
+body.dark-mode footer a {
     color: white;
-  }
-  
+}
