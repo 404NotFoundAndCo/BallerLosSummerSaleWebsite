@@ -16,6 +16,13 @@ toggleModeButton.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   document.body.classList.toggle('light-mode');
 
+  // Notify the iframe of the mode change
+  const iframe = document.querySelector('iframe'); // Replace with appropriate selector
+  if (iframe) {
+    const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    iframe.contentWindow.postMessage({ mode: mode }, '*');
+  }
+
   // Restore the active button after mode switch using a slight delay to ensure DOM updates
   if (activeButtonId) {
     setTimeout(() => {
