@@ -174,14 +174,28 @@ body.dark-mode footer {
 body.dark-mode footer a {
     color: white;
   }
-  .container {
+
+div.container {
     max-width: 600px;
     margin: auto;
-    background: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
 }
+
+/* Light Mode Container */
+body.light-mode div.container {
+    background: white;
+    color: black;
+}
+
+/* Dark Mode Container */
+body.dark-mode div.container {
+    background: #333;
+    color: white;
+}
+
 
 .buttonSubmit {
     background-color: #b3d7ff;
