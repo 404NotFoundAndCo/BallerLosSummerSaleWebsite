@@ -23,8 +23,8 @@
     </header>
 
     <main>
-      <div class="iframe-container">
-        <iframe id="contentFrame" src="about:blank" width="100%" height="500" style="border:none;"></iframe>
+      <div id="content" class="content-container">
+        <!-- Dynamic content will be loaded here -->
       </div>
     </main>
 
@@ -37,9 +37,10 @@
     <!-- Import the commonUtils script -->
     <script src="module/commonUtils/commonUtils.js"></script>
     <script>
-      // Function to get the iframe content based on the hash
-      function loadContentFromHash() {
+      // Function to load content dynamically based on the hash
+      async function loadContentFromHash() {
         const hash = window.location.hash;
+        const contentContainer = document.getElementById('content');
         if (hash) {
           let page = '';
 
@@ -64,11 +65,22 @@
               page = 'datenschutz.html';
               break;
             default:
-              page = 'about:blank'; // Default case if no valid hash is found
+              contentContainer.innerHTML = '<p>Willkommen! Wählen Sie eine Seite aus dem Menü aus.</p>';
+              return;
           }
 
-          // Load the content into the iframe
-          commonUtils.loadIframeContent(page);
+          // Load the page content dynamically
+          try {
+            const response = await fetch(page);
+            if (response.ok) {
+              const html = await response.text();
+              contentContainer.innerHTML = html;
+            } else {
+              contentContainer.innerHTML = '<p>Inhalt konnte nicht geladen werden.</p>';
+            }
+          } catch (error) {
+            contentContainer.innerHTML = '<p>Fehler beim Laden des Inhalts.</p>';
+          }
         }
       }
 
@@ -77,7 +89,7 @@
 
       // Event listener for DOM content loaded
       document.addEventListener('DOMContentLoaded', () => {
-        // Restore iframe content from the URL hash on page load
+        // Restore content from the URL hash on page load
         loadContentFromHash();
 
         // Initialize button active state handlers
