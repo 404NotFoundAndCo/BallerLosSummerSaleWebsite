@@ -51,33 +51,55 @@ const commonUtils = {
     });
   },
 
-  // JavaScript for changing iframe content
-  loadIframeContent: function (page) {
-    const iframe = document.getElementById('contentFrame');
-    iframe.src = page;
-    sessionStorage.setItem('iframeSrc', page);
-  },
+  // Function to load content dynamically based on the hash
+  loadContentFromHash: async function () {
+    const hash = window.location.hash;
+    const contentContainer = document.getElementById('content');
+    if (hash) {
+      let page = '';
 
-  // JavaScript to restore iframe content and active button state on page reload
-  restoreIframeAndActiveButton: function () {
-    document.addEventListener('DOMContentLoaded', () => {
-      // Restore iframe source
-      const savedIframeSrc = sessionStorage.getItem('iframeSrc');
-      if (savedIframeSrc) {
-        document.getElementById('contentFrame').src = savedIframeSrc;
+      // Determine which content to load based on the hash
+      switch (hash) {
+        case '#firma':
+          page = 'module/company/company.html';
+          break;
+        case '#produkt':
+          page = 'module/product/product.html';
+          break;
+        case '#team':
+          page = 'module/team/team.html';
+          break;
+        case '#kontakt':
+          page = 'module/contactForm/contactForm.html';
+          break;
+        case '#impressum':
+          page = 'impressum.html';
+          break;
+        case '#datenschutz':
+          page = 'datenschutz.html';
+          break;
+        default:
+          contentContainer.innerHTML = '<p>Willkommen! Wählen Sie eine Seite aus dem Menü aus.</p>';
+          return;
       }
 
-      // Restore active button
-      const activeButtonId = sessionStorage.getItem('activeButton');
-      if (activeButtonId) {
-        document.querySelector(`nav a[href='${activeButtonId}']`)?.classList.add('active');
+      // Load the page content dynamically
+      try {
+        const response = await fetch(page);
+        if (response.ok) {
+          const html = await response.text();
+          contentContainer.innerHTML = html;
+        } else {
+          contentContainer.innerHTML = '<p>Inhalt konnte nicht geladen werden.</p>';
+        }
+      } catch (error) {
+        contentContainer.innerHTML = '<p>Fehler beim Laden des Inhalts.</p>';
       }
-    });
-  },
+    }
+  }
 };
 
 // Event listeners setup on page load
 document.addEventListener('DOMContentLoaded', () => {
   commonUtils.setActiveButton();
-  commonUtils.restoreIframeAndActiveButton();
 });
