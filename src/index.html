@@ -42,9 +42,10 @@
 
       // Event listener for DOM content loaded
       document.addEventListener('DOMContentLoaded', () => {
+        commonUtils.setActiveButton(); // Sets active button click listeners
         // Restore content from the URL hash on page load
         commonUtils.loadContentFromHash();
-        commonUtils.setActiveButton(); // Sets active button click listeners
+        commonUtils.loadSavedMode();
         commonUtils.loadActiveButton(); // Loads the active button state on page load
       });
     </script>

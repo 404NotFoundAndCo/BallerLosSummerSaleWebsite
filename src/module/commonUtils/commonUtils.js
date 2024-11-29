@@ -19,21 +19,39 @@ const commonUtils = {
     sessionStorage.setItem('activeButton', activeButtonId);
 
     // Toggle mode classes
-    document.body.classList.toggle('dark-mode');
-    document.body.classList.toggle('light-mode');
+    const currentMode = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+    const newMode = currentMode === 'dark-mode' ? 'light-mode' : 'dark-mode';
 
-    // Notify the iframe of the mode change
-    const iframe = document.querySelector('iframe'); // Replace with appropriate selector
-    if (iframe) {
-      const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-      iframe.contentWindow.postMessage({ mode: mode }, '*');
-    }
+    document.body.classList.remove(currentMode);
+    document.body.classList.add(newMode);
+
+    // Save the new mode to local storage
+    localStorage.setItem('themeMode', newMode);
 
     // Restore the active button after mode switch using a slight delay to ensure DOM updates
     if (activeButtonId) {
       setTimeout(() => {
         document.querySelector(`nav a[href='${activeButtonId}']`)?.classList.add('active');
       }, 10);
+      sessionStorage.setItem('activeButton', activeButtonId);
+    }
+  },
+
+  loadSavedMode: function () {
+    // Load the saved mode from local storage
+    const savedMode = localStorage.getItem('themeMode');
+
+    if (savedMode) {
+      document.body.classList.add(savedMode);
+    } else {
+      // Default to light mode if nothing is saved
+      document.body.classList.add('light-mode');
+    }
+
+    // Load the active button from session storage
+    const activeButtonId = sessionStorage.getItem('activeButton');
+    if (activeButtonId) {
+      document.querySelector(`nav a[href='${activeButtonId}']`)?.classList.add('active');
     }
   },
 
