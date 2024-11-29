@@ -37,19 +37,48 @@ const commonUtils = {
     }
   },
 
-  // JavaScript for button active state
-  setActiveButton: function () {
-    document.querySelectorAll('nav a, #toggle-mode').forEach(function (button) {
-      button.addEventListener('click', function () {
-        document.querySelectorAll('nav a, #toggle-mode').forEach(function (btn) {
-          btn.classList.remove('active');
-        });
-        this.classList.add('active');
-        // Save the current active state to session storage
-        sessionStorage.setItem('activeButton', this.getAttribute('href'));
+// Function to add 'click' listeners to each button
+ setActiveButton: function() {
+  // Select all buttons or links that should be affected
+  document.querySelectorAll('nav a, #toggle-mode').forEach(function (button) {
+    button.addEventListener('click', function () {
+      // Remove 'active' class from all buttons/links
+      document.querySelectorAll('nav a, #toggle-mode').forEach(function (btn) {
+        btn.classList.remove('active');
       });
+      // Add 'active' class to the clicked button
+      this.classList.add('active');
+
+      // Save the current active state to session storage
+      if (this.hasAttribute('href')) {
+        sessionStorage.setItem('activeButton', this.getAttribute('href'));
+      } else if (this.id === 'toggle-mode') {
+        sessionStorage.setItem('activeButton', this.id);
+      }
     });
-  },
+  });
+},
+
+// Function to load the active button from session storage on page load
+ loadActiveButton: function() { 
+  // Retrieve the active button identifier from session storage
+  const activeButtonIdentifier = sessionStorage.getItem('activeButton');
+  if (activeButtonIdentifier) {
+    // Find the button/link with the matching href or ID
+    let activeButton = document.querySelector(`nav a[href="${activeButtonIdentifier}"]`);
+    
+    if (!activeButton) {
+      activeButton = document.querySelector(`#${activeButtonIdentifier}`);
+    }
+    
+    if (activeButton) {
+      // Add 'active' class to the button found
+      activeButton.classList.add('active');
+    } else {
+      console.error("No button found for identifier:", activeButtonIdentifier);
+    }
+  }
+},
 
   // Function to load content dynamically based on the hash
   loadContentFromHash: async function () {
@@ -101,5 +130,6 @@ const commonUtils = {
 
 // Event listeners setup on page load
 document.addEventListener('DOMContentLoaded', () => {
-  commonUtils.setActiveButton();
+  setActiveButton(); // Sets active button click listeners
+  loadActiveButton(); // Loads the active button state on page load
 });

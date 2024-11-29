@@ -44,9 +44,8 @@
       document.addEventListener('DOMContentLoaded', () => {
         // Restore content from the URL hash on page load
         commonUtils.loadContentFromHash();
-
-        // Initialize button active state handlers
-        commonUtils.setActiveButton();
+        commonUtils.setActiveButton(); // Sets active button click listeners
+        commonUtils.loadActiveButton(); // Loads the active button state on page load
       });
     </script>
 </body>
