@@ -34,62 +34,18 @@
     </footer>
 
     <!-- Import the commonUtils script -->
-    <script src="module/commonUtils/commonUtils.js"></script>
+    <script src="index.js"></script>
     <script>
-      // Function to load content dynamically based on the hash
-      async function loadContentFromHash() {
-        const hash = window.location.hash;
-        const contentContainer = document.getElementById('content');
-        if (hash) {
-          let page = '';
-
-          // Determine which content to load based on the hash
-          switch (hash) {
-            case '#firma':
-              page = 'module/company/company.html';
-              break;
-            case '#produkt':
-              page = 'module/product/product.html';
-              break;
-            case '#kontakt':
-              page = 'module/contactForm/contactForm.html';
-              break;
-            case '#impressum':
-              page = 'impressum.html';
-              break;
-            case '#datenschutz':
-              page = 'datenschutz.html';
-              break;
-            default:
-              contentContainer.innerHTML = '<p>Willkommen! Wählen Sie eine Seite aus dem Menü aus.</p>';
-              return;
-          }
-
-          // Load the page content dynamically
-          try {
-            const response = await fetch(page);
-            if (response.ok) {
-              const html = await response.text();
-              contentContainer.innerHTML = html;
-            } else {
-              contentContainer.innerHTML = '<p>Inhalt konnte nicht geladen werden.</p>';
-            }
-          } catch (error) {
-            contentContainer.innerHTML = '<p>Fehler beim Laden des Inhalts.</p>';
-          }
-        }
-      }
-
       // Event listener for hash change
-      window.addEventListener('hashchange', loadContentFromHash);
+      window.addEventListener('hashchange', commonUtils.loadContentFromHash);
 
       // Event listener for DOM content loaded
       document.addEventListener('DOMContentLoaded', () => {
+        commonUtils.setActiveButton(); // Sets active button click listeners
         // Restore content from the URL hash on page load
-        loadContentFromHash();
-
-        // Initialize button active state handlers
-        commonUtils.setActiveButton();
+        commonUtils.loadContentFromHash();
+        commonUtils.loadSavedMode();
+        commonUtils.loadActiveButton(); // Loads the active button state on page load
       });
     </script>
 </body>
