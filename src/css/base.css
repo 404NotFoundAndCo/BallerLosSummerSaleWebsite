@@ -228,16 +228,16 @@ input, textarea {
 
 .teamImageLeft {
     display: inline-block;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin-right: 50px;
     user-select: none;
 }
 
 .teamImageRight {
     display: inline-block;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin-left: 50px;
     user-select: none;
 }
