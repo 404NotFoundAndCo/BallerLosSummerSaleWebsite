@@ -13,7 +13,7 @@
         </div>
         <div class="header-right">
           <nav>
-            <a href="#firma">Firma</a>
+            <a id="navCompany" href="#firma">Firma</a>
             <a href="#produkt">Produkt</a>
             <a href="#kontakt">Kontakt</a>
           </nav>
@@ -33,20 +33,7 @@
       <a href="#datenschutz">Datenschutz</a>
     </footer>
 
-    <!-- Import the commonUtils script -->
+    <!--Import the index.js-->
     <script src="index.js"></script>
-    <script>
-      // Event listener for hash change
-      window.addEventListener('hashchange', commonUtils.loadContentFromHash);
-
-      // Event listener for DOM content loaded
-      document.addEventListener('DOMContentLoaded', () => {
-        commonUtils.setActiveButton(); // Sets active button click listeners
-        // Restore content from the URL hash on page load
-        commonUtils.loadContentFromHash();
-        commonUtils.loadSavedMode();
-        commonUtils.loadActiveButton(); // Loads the active button state on page load
-      });
-    </script>
 </body>
 </html>
