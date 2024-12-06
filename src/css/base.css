@@ -24,8 +24,7 @@ header {
 
 .header-right {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Align the buttons to the right side */
+    align-items: center;
 }
 
 .logo img {
@@ -35,9 +34,8 @@ header {
 nav {
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
+    margin-top: 0;
     padding-right: 20px;
-    margin-bottom: 10px;
 }
 
 nav a {
@@ -76,6 +74,7 @@ nav a.active {
     border: none;
     cursor: pointer;
     transition: filter 0.3s;
+    margin-left: 20px;
 }
 
 body.light-mode button.lightbulb {
@@ -173,7 +172,7 @@ body.dark-mode footer {
 
 body.dark-mode footer a {
     color: white;
-  }
+}
 
 div.container {
     max-width: 600px;
@@ -195,7 +194,6 @@ body.dark-mode div.container {
     background: #333;
     color: white;
 }
-
 
 .buttonSubmit {
     background-color: #b3d7ff;
@@ -239,3 +237,76 @@ input, textarea {
     height: 250px;
     margin-left: 50px;
 }
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-right {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    .teamContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teamImageleft, .teamImageRight {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 20px;
+    }
+
+    main h1 {
+        font-size: 28px;
+    }
+
+    main h2 {
+        font-size: 20px;
+    }
+
+    .lightbulb {
+        font-size: 30px;
+    }
+
+    .buttonSubmit {
+        padding: 8px;
+    }
+} 
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+} 
