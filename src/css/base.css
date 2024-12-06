@@ -307,7 +307,7 @@ input, textarea {
     }
 
     footer {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: center;
     }
 } 
