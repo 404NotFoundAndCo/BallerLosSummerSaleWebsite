@@ -114,7 +114,7 @@ main p {
 
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     background-color: #b3d7ff;
@@ -306,7 +306,7 @@ input, textarea {
     }
 
     footer {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: center;
     }
 } 
