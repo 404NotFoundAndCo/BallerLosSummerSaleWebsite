@@ -239,3 +239,42 @@ input, textarea {
     height: 250px;
     margin-left: 50px;
 }
+
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: flex;
+    overflow: hidden;
+    width: 400px; /* Adjust as needed */
+}
+
+.gallery-image {
+    width: 100px; /* Size of the smaller pictures */
+    height: 75px; /* Size of the smaller pictures */
+    object-fit: cover;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.enlarged-image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.enlarged-image {
+    width: 400px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.nav-button {
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+}

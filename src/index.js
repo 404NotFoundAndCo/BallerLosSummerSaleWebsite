@@ -148,6 +148,6 @@ const commonUtils = {
 
 // Event listeners setup on page load
 document.addEventListener('DOMContentLoaded', () => {
-  setActiveButton(); // Sets active button click listeners
-  loadActiveButton(); // Loads the active button state on page load
+  commonUtils.setActiveButton(); // Sets active button click listeners
+  commonUtils.loadActiveButton(); // Loads the active button state on page load
 });

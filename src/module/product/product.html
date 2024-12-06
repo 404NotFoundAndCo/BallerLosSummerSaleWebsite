@@ -1,1 +1,20 @@
-<!--ref issue #3-->
+<div>
+    <div class="enlarged-image-container">
+        <img id="currentImage" class="enlarged-image" src="./Images/image1.jpg" alt="Enlarged Image" />
+    </div>
+    <div class="gallery-container">
+        <button id="prev" class="nav-button" aria-label="Previous image">←</button>
+        <div class="gallery" id="gallery">
+            <img class="gallery-image" src="./Images/image1.jpg" alt="Image 1" />
+            <img class="gallery-image" src="./Images/image2.jpg" alt="Image 2" />
+            <img class="gallery-image" src="./Images/image3.jpg" alt="Image 3" />
+        </div>
+        <button id="next" class="nav-button" aria-label="Next image">→</button>
+    </div>
+</div>
+<script>
+    document.getElementById('next')
+    .addEventListener('click', function() {
+        console.log('click');
+    });
+</script>
