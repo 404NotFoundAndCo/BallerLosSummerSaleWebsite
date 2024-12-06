@@ -1,51 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const galleryImages = document.querySelectorAll('.gallery-image');
-    const currentImage = document.getElementById('currentImage');
-    const nextButton = document.getElementById('next');
-    const prevButton = document.getElementById('prev');
-    let currentIndex = 0;
+function changeImage(src) {
+    const mainImage = document.getElementById('current-image');
+    const previews = document.querySelectorAll('.preview');
 
-    console.log(galleryImages);
-    console.log(currentImage);
-    console.log(nextButton);
-    console.log(prevButton);
+    // Update main image source
+    mainImage.src = src;
 
-    if (galleryImages.length === 0) {
-        console.error("No gallery images found!");
+    // Update active preview border
+    previews.forEach(preview => preview.classList.remove('active'));
+    const activePreview = Array.from(previews).find(preview => preview.src.includes(src));
+    if (activePreview) {
+        activePreview.classList.add('active');
     }
+}
 
-    // Function to update the current enlarged image
-    function updateCurrentImage(index) {
-        currentIndex = index;
-        currentImage.src = galleryImages[currentIndex].src;
-    }
-
-    // Initial image setting
-    updateCurrentImage(currentIndex);
-
-    // Click event for the gallery images
-    galleryImages.forEach((image, index) => {
-        image.addEventListener('click', () => {
-            updateCurrentImage(index);
-        });
-    });
-
-    // Navigation buttons
-    nextButton.addEventListener('click', () => {
-        console.log("Next button clicked");
-        if (currentIndex < galleryImages.length - 1) {
-            updateCurrentImage(currentIndex + 1);
-        } else {
-            updateCurrentImage(0);
-        }
-    });
-
-    prevButton.addEventListener('click', () => {
-        console.log("Previous button clicked");
-        if (currentIndex > 0) {
-            updateCurrentImage(currentIndex - 1);
-        } else {
-            updateCurrentImage(galleryImages.length - 1);
-        }
-    });
-});
+// Automatically select the first image on load
+window.onload = function() {
+    changeImage('FingerabdruckRecherche.png');
+};
