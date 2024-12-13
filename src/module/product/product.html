@@ -1,1 +1,62 @@
-<!--ref issue #3-->
+
+<style>
+    .carousel-container {
+        width: 80%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .preview-container {
+        margin-top: 10px;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .preview-images {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .preview {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .preview:hover, .preview.active {
+        border-color: #007bff;
+        transform: scale(1.1);
+    }
+</style>
+<div class="carousel-container">
+    <div class="main-image">
+        <img id="current-image" src="./Images/image1.jpg" alt="Main Display">
+    </div>
+    <div class="preview-container">
+        <div class="preview-images">
+
+            <button id="prev" class="nav-button" aria-label="Previous image" onclick="toImage(-1)">←</button>
+
+            <img class="preview" src="./Images/image1.jpg" alt="Preview 1" onclick="changeImage('./Images/image1.jpg')">
+            <img class="preview" src="./Images/image2.jpg" alt="Preview 2" onclick="changeImage('./Images/image2.jpg')">
+            <img class="preview" src="./Images/image3.jpg" alt="Preview 3" onclick="changeImage('./Images/image3.jpg')">
+        
+            <button id="next" class="nav-button" aria-label="Next image" onclick="toImage(1)">→</button>
+
+        </div>
+    </div>
+</div>
