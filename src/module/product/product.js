@@ -12,13 +12,14 @@ function changeImage(src) {
 
     // Update main image source
     mainImage.src = src;
-
     // Update active preview border
     previews.forEach(preview => preview.classList.remove('active'));
     const activePreview = Array.from(previews).find(preview => preview.src.includes(src));
     if (activePreview) {
         activePreview.classList.add('active');
     }
+
+    currentIndex = images.indexOf(src)
 }
 
 function toImage(direction) {
