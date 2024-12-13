@@ -1,19 +1,21 @@
 <!--ref issue #6-->
 <head>
     <link rel="stylesheet" href="../../css/base.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script src="contactForm.js" defer></script> <!-- Verlinkung zur externen JavaScript-Datei -->
 </head>
 <body>
 <div class="container">
     <h1>Kontaktieren Sie uns</h1>
-    <form action="mailto:contact-me@example.com" method="post" enctype="text/plain">
+    <form id="contact-form">
         <label for="first-name">Vorname:</label>
-        <input type="text" id="first-name" name="first-name" required>
+        <input type="text" id="first-name" name="first_name" required>
 
         <label for="last-name">Nachname:</label>
-        <input type="text" id="last-name" name="last-name" required>
+        <input type="text" id="last-name" name="last_name" required>
 
         <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="user_email" required>
 
         <label for="message">Nachricht:</label>
         <textarea id="message" name="message" rows="4" required></textarea>

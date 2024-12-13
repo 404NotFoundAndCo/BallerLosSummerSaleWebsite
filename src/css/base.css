@@ -47,6 +47,7 @@ nav a {
     transition: color 0.3s, background-color 0.3s;
     border-radius: 5px;
     border: none;
+    user-select: none;
 }
 
 nav a:hover {
@@ -75,6 +76,7 @@ nav a.active {
     cursor: pointer;
     transition: filter 0.3s;
     margin-left: 20px;
+    user-select: none;
 }
 
 body.light-mode button.lightbulb {
@@ -226,16 +228,18 @@ input, textarea {
 
 .teamImageLeft {
     display: inline-block;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin-right: 50px;
+    user-select: none;
 }
 
 .teamImageRight {
     display: inline-block;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin-left: 50px;
+    user-select: none;
 }
 
 
