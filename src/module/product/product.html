@@ -1,15 +1,20 @@
 
 <style>
-    .carousel-container {
+    .gallery-container {
         width: 80%;
-        max-width: 600px;
+        height: auto;
+        max-width: 400px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        align-content: center;
+
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
     }
 
     .main-image img {
-        width: 100%;
+        max-width: 450px;
         height: auto;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -41,19 +46,32 @@
         border-color: #007bff;
         transform: scale(1.1);
     }
+
+    /* Tablet mode adjustments */
+    @media (max-width: 768px) {
+        .main-image img {
+            width: 100%; /* Ensure full width scaling */
+            max-width: 100%; /* Prevent exceeding container width */
+        }
+        
+        .preview {
+            width: 50px; /* Slightly smaller previews for tablets */
+            height: 50px;
+        }
+    }
 </style>
 <div class="carousel-container">
     <div class="main-image">
-        <img id="current-image" src="./Images/image1.jpg" alt="Main Display">
+        <img id="current-image" src="./Images/3dDrucker.png" alt="Main Display">
     </div>
     <div class="preview-container">
         <div class="preview-images">
 
             <button id="prev" class="nav-button" aria-label="Previous image" onclick="toImage(-1)">←</button>
 
-            <img class="preview" src="./Images/image1.jpg" alt="Preview 1" onclick="changeImage('./Images/image1.jpg')">
-            <img class="preview" src="./Images/image2.jpg" alt="Preview 2" onclick="changeImage('./Images/image2.jpg')">
-            <img class="preview" src="./Images/image3.jpg" alt="Preview 3" onclick="changeImage('./Images/image3.jpg')">
+            <img class="preview" src="./Images/3dDrucker.png" alt="Preview 1" onclick="changeImage('./Images/3dDrucker.png')">
+            <img class="preview" src="./Images/Produkt1.bmp" alt="Preview 2" onclick="changeImage('./Images/Produkt1.bmp')">
+            <img class="preview" src="./Images/Produkt2.bmp" alt="Preview 3" onclick="changeImage('./Images/Produkt2.bmp')">
         
             <button id="next" class="nav-button" aria-label="Next image" onclick="toImage(1)">→</button>
 
