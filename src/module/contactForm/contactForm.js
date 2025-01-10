@@ -1,9 +1,7 @@
-// EmailJS initialization
-
 function SendMail() {
     const form = document.getElementById('contact-form');
 
-console.log("Sending mail");
+    console.log("Sending mail");
 
     emailjs.init({
         publicKey: 'PublicAPIKey',
@@ -15,11 +13,25 @@ console.log("Sending mail");
     }
 
     const buttonSubmit = form.querySelector('.buttonSubmit');
-    const messageContainer = document.createElement('div');
-    form.appendChild(messageContainer);
+    let messageContainer = form.querySelector('.message-container'); // Check for existing container
+
+    if (!messageContainer) {
+        messageContainer = document.createElement('div');
+        messageContainer.className = 'message-container';
+        form.appendChild(messageContainer);
+    }
+
+    let isSubmitting = false; // Flag to prevent multiple submissions
 
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
+
+        if (isSubmitting) {
+            console.warn('Form is already being submitted.');
+            return;
+        }
+
+        isSubmitting = true; // Set flag to true to prevent multiple submissions
 
         // Disable submit button and show loading message
         buttonSubmit.disabled = true;
@@ -36,7 +48,7 @@ console.log("Sending mail");
         // Send the email using emailjs.send()
         emailjs
             .send('ServiceId', 'TemplateId', params, {
-                publicKey: 'Test', // Optional: Pass the public key here as well
+                publicKey: 'PublicAPIKey', // Optional: Pass the public key here as well
             })
             .then(function (response) {
                 console.log('E-Mail wurde erfolgreich gesendet!', response.status, response.text);
@@ -49,6 +61,7 @@ console.log("Sending mail");
             })
             .finally(function () {
                 buttonSubmit.disabled = false;
+                isSubmitting = false; // Reset flag after submission is complete
             });
     });
 }
