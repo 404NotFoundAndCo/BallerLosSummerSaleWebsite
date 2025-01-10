@@ -1,12 +1,13 @@
 // EmailJS initialization
-(function () {
-    emailjs.init({
-        publicKey: 'Test',
-    });
-})();
 
-function initializeContactForm() {
+function SendMail() {
     const form = document.getElementById('contact-form');
+
+console.log("Sending mail");
+
+    emailjs.init({
+        publicKey: 'PublicAPIKey',
+    });
 
     if (!form) {
         console.error('The contact form was not found on the page.');
@@ -18,7 +19,7 @@ function initializeContactForm() {
     form.appendChild(messageContainer);
 
     form.addEventListener('submit', function (event) {
-        event.preventDefault();
+        event.preventDefault(); 
 
         // Disable submit button and show loading message
         buttonSubmit.disabled = true;
@@ -34,7 +35,7 @@ function initializeContactForm() {
 
         // Send the email using emailjs.send()
         emailjs
-            .send('Test', 'Test', params, {
+            .send('ServiceId', 'TemplateId', params, {
                 publicKey: 'Test', // Optional: Pass the public key here as well
             })
             .then(function (response) {
