@@ -2,7 +2,7 @@
 <style>
     .gallery-container {
         width: 80%;
-        height: 100%;
+        height: auto;
         max-width: 400px;
         display: flex;
         flex-direction: column;
@@ -15,7 +15,7 @@
 
     .main-image img {
         max-width: 450px;
-        height: 450px;
+        height: auto;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
@@ -45,6 +45,19 @@
     .preview:hover, .preview.active {
         border-color: #007bff;
         transform: scale(1.1);
+    }
+
+    /* Tablet mode adjustments */
+    @media (max-width: 768px) {
+        .main-image img {
+            width: 100%; /* Ensure full width scaling */
+            max-width: 100%; /* Prevent exceeding container width */
+        }
+        
+        .preview {
+            width: 50px; /* Slightly smaller previews for tablets */
+            height: 50px;
+        }
     }
 </style>
 <div class="carousel-container">
