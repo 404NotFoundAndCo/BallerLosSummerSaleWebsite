@@ -3,10 +3,6 @@ function SendMail() {
 
     console.log("Sending mail");
 
-    emailjs.init({
-        publicKey: 'PublicAPIKey',
-    });
-
     if (!form) {
         console.error('The contact form was not found on the page.');
         return;
@@ -23,7 +19,7 @@ function SendMail() {
 
     let isSubmitting = false; // Flag to prevent multiple submissions
 
-    form.addEventListener('submit', function (event) {
+    form.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         if (isSubmitting) {
@@ -45,23 +41,32 @@ function SendMail() {
             message: document.getElementById('message').value,
         };
 
-        // Send the email using emailjs.send()
-        emailjs
-            .send('ServiceId', 'TemplateId', params, {
-                publicKey: 'PublicAPIKey', // Optional: Pass the public key here as well
-            })
-            .then(function (response) {
-                console.log('E-Mail wurde erfolgreich gesendet!', response.status, response.text);
+        try {
+            // Send the data to the backend server
+            const response = await fetch('http://localhost:3000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(params),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('E-Mail wurde erfolgreich gesendet!', result);
                 messageContainer.innerHTML = '<p class="success">Vielen Dank für Ihre Nachricht! Wir melden uns bald bei Ihnen.</p>';
                 form.reset();
-            })
-            .catch(function (error) {
+            } else {
+                const error = await response.json();
                 console.error('Fehler beim Senden der E-Mail:', error);
                 messageContainer.innerHTML = '<p class="error">Entschuldigung, ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</p>';
-            })
-            .finally(function () {
-                buttonSubmit.disabled = false;
-                isSubmitting = false; // Reset flag after submission is complete
-            });
+            }
+        } catch (error) {
+            console.error('Fehler beim Senden der E-Mail:', error);
+            messageContainer.innerHTML = '<p class="error">Entschuldigung, ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</p>';
+        } finally {
+            buttonSubmit.disabled = false;
+            isSubmitting = false; // Reset flag after submission is complete
+        }
     });
 }
