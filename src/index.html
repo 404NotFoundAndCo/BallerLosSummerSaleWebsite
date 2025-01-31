@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Über uns - Baller LOS</title>
+  <title class="trn">About us - Baller LOS</title>
   <link rel="stylesheet" href="css/base.css">
 </head>
 <body class="light-mode">
@@ -13,11 +13,12 @@
         </div>
         <div class="header-right">
           <nav>
-            <a id="navCompany" href="#firma">Firma</a>
-            <a href="#produkt">Produkt</a>
-            <a href="#kontakt">Kontakt</a>
+            <a id="navCompany" href="#firma" class="trn">Company</a>
+            <a href="#produkt" class="trn">Product</a>
+            <a href="#kontakt" class="trn">Contact</a>
           </nav>
           <button id="toggle-mode" class="lightbulb">💡</button>
+          <button id="btnTranslate" class="trn lightbulb">🇩🇪</button>
         </div>
     </header>
 
@@ -29,13 +30,14 @@
 
     <footer>
       <p>© 2024</p>
-      <a href="#impressum">Impressum</a>
-      <a href="#datenschutz">Datenschutz</a>
+      <a href="#impressum" class="trn">Legal notice</a>
+      <a href="#datenschutz" class="trn">Privacy policy</a>
     </footer>
 
-    <!--Import the index.js-->
-    <script src="index.js"></script>
-    <script src="./module/product/product.js"></script>
+    <!--Import the javascript files-->
+    <script src="./jQuery/jQuery.js"></script>
+    <script src="./i18n/jquery.translate.js"></script>
+    <script type="module" src="index.js"></script>
     <script src="./module/product/product.js"></script>
 </body>
 </html>

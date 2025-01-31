@@ -1,3 +1,5 @@
+import { dict } from "./i18n/dict.js"
+
 //JavaScript for Light/Dark Mode Toggle
 function toggleLightDarkMode() {
     //Save the currently active button to session storage
@@ -85,7 +87,7 @@ function loadActiveButton() {
 }
 
 //Function to load content dynamically based on the hash
-async function loadContentFromHash() {
+async function loadContentFromHash(translator, lang) {
     const hash = window.location.hash;
     const contentContainer = document.getElementById('content');
     let page = '';
@@ -117,6 +119,8 @@ async function loadContentFromHash() {
     if (response.ok) {
         const html = await response.text();
         contentContainer.innerHTML = html;
+
+        translator.lang(lang);
     } else {
         contentContainer.innerHTML = '<p>Inhalt konnte nicht geladen werden.</p>';
     }
@@ -125,20 +129,38 @@ async function loadContentFromHash() {
     }
 }
 
-//new
-document.addEventListener('DOMContentLoaded', function () {
-    window.addEventListener('hashchange', loadContentFromHash);
-    loadContentFromHash();
-    setActiveButton();
-    loadSavedMode();
-    loadActiveButton();
+document.addEventListener('DOMContentLoaded', async function () {
+  //detect language used in browser
+  var locale = navigator.language,
+      translator = $('body').translate({lang: locale, t: dict});
 
-    document.getElementById('toggle-mode')
-    .addEventListener('click', function () {
-        toggleLightDarkMode();
-    });
+  window.addEventListener('hashchange', function () {
+    loadContentFromHash(translator, locale);
+  });
+  loadContentFromHash(translator, locale);
+  setActiveButton();
+  loadSavedMode();
+  loadActiveButton();
 
-    if (window.location.hash === '') {
-        document.getElementById('navCompany').click();
+  document.getElementById('toggle-mode')
+  .addEventListener('click', function () {
+      toggleLightDarkMode();
+  });
+
+  if (window.location.hash === '') {
+    document.getElementById('navCompany').click();
+  }
+
+  $('#btnTranslate')
+  .on('click', function () {
+    locale = locale === 'en' ? 'de': 'en';
+
+    translator.lang(locale);
+
+    if (locale === 'en') {
+      $('#btnTranslate').text('\ud83c\uddec\ud83c\udde7');
+    } else {
+      $('#btnTranslate').text('\ud83c\udde9\ud83c\uddea');
     }
+  });
 });
