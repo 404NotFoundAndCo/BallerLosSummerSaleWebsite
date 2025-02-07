@@ -19,7 +19,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #b3d7ff;
+    background: linear-gradient(to right, #b3d7ff, #0057b3);
+    box-shadow: 5px 5px 25px black;
 }
 
 .header-right {
@@ -119,8 +120,9 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
-    background-color: #b3d7ff;
+    background: linear-gradient(to right, #b3d7ff, #0057b3);
     color: black;
+    box-shadow: 5px 5px 25px black;
 }
 
 footer a {
@@ -136,7 +138,8 @@ footer a:hover {
 
 /* Light Mode Styles */
 body.light-mode {
-    background-color: white;
+    background: linear-gradient(to right, #b3d7ff, #0057b3);
+    background-color: lightsteelblue;
     color: black;
 }
 
@@ -150,12 +153,12 @@ body.light-mode footer {
 
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #1a1a1a;
+    background: #1a1a1a;
     color: white;
 }
 
 body.dark-mode header {
-    background-color: #333;
+    background: #333;
 }
 
 body.dark-mode nav a {
@@ -163,12 +166,12 @@ body.dark-mode nav a {
 }
 
 body.dark-mode nav a.active {
-    background-color: #007aff;
+    background: #007aff;
     color: white;
 }
 
 body.dark-mode footer {
-    background-color: #333;
+    background: #333;
     color: white;
 }
 
