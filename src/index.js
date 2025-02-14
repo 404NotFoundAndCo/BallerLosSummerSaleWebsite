@@ -1,4 +1,4 @@
-import { dict } from "./i18n/dict.js"
+import { dict } from "./i18n/dict.js";
 
 //JavaScript for Light/Dark Mode Toggle
 function toggleLightDarkMode() {
@@ -102,9 +102,6 @@ async function loadContentFromHash(translator, lang) {
             break;
         case '#kontakt':
             page = 'module/contactForm/contactForm.html';
-            break;
-        case '#impressum':
-            page = 'impressum.html';
             break;
         case '#datenschutz':
             page = 'datenschutz.html';
