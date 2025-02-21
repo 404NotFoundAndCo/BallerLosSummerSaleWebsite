@@ -4,76 +4,78 @@ body {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 }
 
+.headline-container {
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: multiply;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: calc(100% - 2vw);
+  max-width: 2000px;
+  height: 50vh;
+  margin: 1vw auto;
+  padding: 30px;
+  border-radius: 20px;
+}
+
 .text-container {
   display: flex;
   flex-direction: column;
 }
 
 .title {
-  font-size: 46px;
+  font-size: clamp(24px, 3.5vw, 56px);
   margin: 0;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
 }
 
 .subtitle {
-  font-size: 26px;
+  font-size: clamp(14px, 2vw, 36px);
   margin: 5px 0 0 0;
   font-family: 'Inter', sans-serif;
 }
 
-.headline-container {
-  background-image: url('./images/Waves3.png');
-  background-size: cover;
-  background-position: center;
-  z-index: -2;
-
-  background-color: rgba(255, 255, 255, 0.5);
-  background-blend-mode: multiply;
-
-  text-align: center;
-  height: 50vh;
-  width: calc(100vw - 40px);
-  box-sizing: border-box;
-  margin: 10px;
+.pair-container {
   display: flex;
-  align-items: center;
-  border-radius: 20px;
-  justify-content: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  width: calc(100% - 2vw);
+  max-width: 2000px;
+  margin: 1vw auto;
 }
 
-.frame {
-  vertical-align: top;
-  height: 50vh;
-  width: calc(50vw - 30px);
-  margin: 10px;
-  display: inline-block;
-  box-sizing: border-box;
-  border-radius: 20px;
+.small-container {
+  position: relative;
 }
 
-.frame h2 {
-  margin: 20px;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.frame p {
-  font-family: 'Inter', sans-serif;
-  margin: 20px;
-  font-size: 18px;
-  line-height: 1.6;
-}
+.frame,
 .small-container {
   vertical-align: top;
-  height: 50vh;
-  width: calc(50vw - 30px);
-  margin: 10px;
-  display: inline-block;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
   box-sizing: border-box;
   border-radius: 20px;
-  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0;
+}
+
+.pair-container > .frame:first-child {
+  margin-right: 1vw;
+}
+
+.pair-container > .small-container:first-child {
+  margin-right: 1vw;
 }
 
 .small-container img {
@@ -87,24 +89,37 @@ body {
   border-radius: 20px;
 }
 
-.content {
-  display: flex;
-  min-height: 100vh;
-  line-height: 1.1;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
+.frame h2 {
+  margin: 20px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(22px, 2.5vw, 42px);
 }
 
-.content h1 {
-  font-size: 3.6rem;
-  font-weight: 700;
+.frame p {
+  font-family: 'Inter', sans-serif;
+  margin: 20px;
+  font-size: clamp(14px, 1.5vw, 28px);
+  line-height: 1.6;
 }
 
-.content p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  opacity: 0.5;
+/* Mobile Anpassungen */
+@media (max-width: 768px) {
+  .pair-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .frame, .small-container {
+    width: calc(100% - 10vw);
+    max-width: none;
+  }
+
+  .pair-container > .frame:first-child,
+  .pair-container > .small-container:first-child {
+    margin-right: 0; /* Kein mittlerer Abstand bei kleinerem Bildschirm */
+  }
 }
 
 .dark-mode {
@@ -117,6 +132,7 @@ body {
     text-shadow: 0 4px 5px black;
   }
   .headline-container {
+    background-image: url('./images/Waves3.png');
     background-color: #2f3d5ce9;
     background-blend-mode: overlay;
     box-shadow: inset 2px 2px 2px 0 rgba(59, 75, 113, 0.5),
@@ -137,6 +153,7 @@ body {
   }
   .contact-container {
     background: #2f3d5c;
+    border: 5px solid #3d466a;
     box-shadow: inset 2px 2px 2px 0 rgba(59, 75, 113, 0.5),
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
@@ -180,41 +197,41 @@ body {
 }
 
 .light-mode {
-  background-image: linear-gradient(to bottom, #84a4ff, #5880fa);
+  background-image: linear-gradient(to bottom, #F7F7F7, rgba(184, 210, 241, 0.96));
   color: #161b39;
   .title {
-    text-shadow: 0 4px 5px rgb(97, 123, 202);
+    /*text-shadow: 0 4px 5px rgb(97, 123, 202);*/
   }
   .subtitle {
     /*text-shadow: 0 4px 5px rgb(97, 123, 202);*/
-    color: #4482af;
     font-weight: bold;
   }
   .headline-container {
+    background-image: url('./images/Waves4.png');
     z-index: -1;
-    background-color: #84a4ffe9;
+    background-color: rgba(180, 208, 244, 0.95);
     background-blend-mode: overlay;
     box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
   }
   .small-container {
-    background-color: #84a4ff;
+    background-color: #A5CAF0;
     box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
   }
   .frame {
-    background-color: rgba(164, 189, 255, 1%);
-    border: 5px solid #84a4ff;
+    background-color: rgba(175, 207, 243, 0.38);
+    border: 5px solid #A5CAF0;
     /*border-image: linear-gradient(to right, rgb(164, 189, 255), rgb(164, 189, 255));*/
     box-shadow: inset
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
   }
   .contact-container {
-    background-color: rgba(143, 176, 255, 0.66);
-
+    background-color: #A5CAF0;
+    border: 5px solid #d5e8f6;
     box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
@@ -230,14 +247,14 @@ body {
     text-shadow: 0 4px 5px rgb(97, 123, 202);
   }
   .footer-border {
-    border-top: 2px solid white;
+    border-top: 2px solid #d5e8f6;
   }
   .footer-text:hover {
     color: white;
   }
   .navbar {
-    background-color: rgb(132, 164, 255);
-    border-bottom: 2px solid white;
+    background-color: #A5CAF0;
+    border-bottom: 2px solid #d5e8f6;
   }
   .navbar-brand {
     color: rgb(31, 32, 53) !important;
