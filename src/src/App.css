@@ -83,6 +83,17 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 90%; /* Skaliert mit dem Container */
+  height: 90%; /* Skaliert mit dem Container */
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.small-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 100%;
   max-height: 90%;
   object-fit: contain;
