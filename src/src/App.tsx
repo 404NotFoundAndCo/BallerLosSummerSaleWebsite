@@ -7,8 +7,11 @@ import printer from "./images/Drucker.png";
 import Footer from "./components/Footer.tsx";
 import ContactForm from "./components/ContactForm.tsx";
 import {useEffect} from "react";
+import { useTranslation, Trans } from 'react-i18next';
 
 const App = () => {
+
+    const { t } = useTranslation();
 
     useEffect(() => {
         document.title = "Baller LOS";
@@ -19,8 +22,16 @@ const App = () => {
             <Navbar/>
             <div className={"headline-container"}>
                 <div className="text-container">
-                    <h1 className="title">Ein Schülerunternehmen der BBS 1 Lüneburg mit <em>Meerwert</em></h1>
-                    <p className="subtitle">Spielend Wasser Schützen</p>
+                    <h1 className="title">
+                        <Trans i18nKey="webpage.title">
+                            Ein Schülerunternehmen der BBS 1 Lüneburg mit <em>Meerwert</em>
+                        </Trans>
+                    </h1>
+                    <p className="subtitle">
+                        <Trans i18nKey="webpage.subtitle">
+                            Spielend Wasser
+                        </Trans>
+                    </p>
                 </div>
             </div>
 
