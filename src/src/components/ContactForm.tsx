@@ -56,7 +56,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <form className="contact-container" onSubmit={handleSubmit}>
+        <div className="contact-container" onSubmit={handleSubmit}>
             <div className="input-group">
                 <div className="input-field">
                     <i className="bi bi-person-circle h3"></i>
@@ -120,7 +120,7 @@ const ContactForm: React.FC = () => {
             <button type="submit" className="custom-btn" disabled={isSubmitting}>
                 {isSubmitting ? "Senden..." : "Senden"}
             </button>
-        </form>
+        </div>
     );
 };
 
