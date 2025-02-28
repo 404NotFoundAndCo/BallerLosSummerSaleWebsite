@@ -38,42 +38,38 @@ const App = () => {
                         <img src={logo} alt="Bild"/>
                     </div>
                     <div className="frame">
-                        <h2>
-                            {t('aboutUs.title')}
-                        </h2>
+                        <h2>Über uns</h2>
                         <p>
-                            {t('aboutUs.description1')}
-                            {t('aboutUs.description2')}
+                            Das ist unsere Schülerfirma „Baller los", was so viel heißt, wie mit voller Kraft loslegen
+                            bedeutet – und das machen wir.
                         </p>
                         <p>
-                            {t('aboutUs.description3')}
-                            {t('aboutUs.description4')}
-                            {t('aboutUs.description5')}
+                            Wir stellen ein eigenes Spiel her und wollen mit diesem Spiel auf den Umweltschutz,
+                            besonders bei den Gewässern, aufmerksam machen. Daher ist es selbstverständlich, dass wir
+                            unser Spiel so umweltfreundlich und hochwertig wie möglich produzieren.
                         </p>
                         <p>
-                            {t('aboutUs.description6')}
-                            {t('aboutUs.description7')}
-                            {t('aboutUs.description8')}
+                            Wir nutzen einen 3D-Drucker mit recycle fähigem und sogar Recycling-Filament, um unsere
+                            Figuren selbst herstellen zu können. Auch die anderen Materialien wie Spielbrett und
+                            Verpackung sind recycle fähig oder bestehen aus recyclingmaterial.
                         </p>
                         <p>
-                            {t('aboutUs.description9')}
-                            {t('aboutUs.description10')}
+                            Zusätzlich untersuchen wir die Verschmutzung der Ilmenau (dieser Fluss fließt durch
+                            Lüneburg), indem wir Plastikmüll einsammeln und zählen.
                         </p>
                     </div>
                 </div>
                 <div className={"pair-container"}>
                     <div className={"frame"}>
-                        <h2>
-                            {t('team.title')}
-                        </h2>
+                        <h2>Das Team</h2>
                         <p>
-                            {t('team.description1')}<br/>
-                            {t('team.description2')}
-                            {t('team.description3')}
+                            Wir sind die HA24B!<br />
+                            Wir sind 24 Schülerinnen und Schüler im Alter von 15 bis 18 Jahren. Diese Schülerfirma haben
+                            wir im Rahmen der einjährigen Berufsfachschule Wirtschaft an der BBS I Lüneburg gegründet.
                         </p>
                         <p>
-                            {t('team.description4')}
-                            {t('team.description5')}
+                            Für diese Website kooperieren wir mit dem Lüneburger IT-Unternehmen „Webnetz“ und den
+                            Auszubildenden zum Fachinformatiker im 3. Lehrjahr aus der Klasse IT22B von unserer Schule.
                         </p>
                         <a href="https://www.instagram.com/bbs1lg/" className="footer-text"><i
                             className="bi bi-instagram h1"></i></a>
@@ -90,39 +86,35 @@ const App = () => {
                         <img src={game} alt="Bild"/>
                     </div>
                     <div className={"frame"}>
-                        <h2>
-                            {t('game.title')}
-                        </h2>
+                        <h2>Die Spielregeln</h2>
                         <p>
-                            <strong>{t('game.playerNumber')} </strong> {t('game.playerNumberContent')} <br />
-                            <strong>{t('game.age')} </strong> {t('game.ageContent')} <br />
-                            <strong>{t('game.time')} </strong> {t('game.timeContent')}
+                            <strong>Spieleranzahl:</strong> 2 bis 6 Spieler <br />
+                            <strong>Alter:</strong> 12 bis 99 Jahre <br />
+                            <strong>Spieldauer:</strong> 10 bis 15 Minuten
                         </p>
                         <p>
-                            <strong>{t('game.material')} </strong><br />
-                            {t('game.materialContent1')}<br />
-                            {t('game.materialContent2')}<br />
-                            {t('game.materialContent3')}<br />
-                            {t('game.materialContent4')}<br />
+                            <strong>Spielmaterialien:</strong><br />
+                            Spielbrett mit Feldern (Fragefelder mit Fragezeichen, Ereignisfelder mit Ausrufezeichen)<br />
+                            Spielfiguren für jeden Spieler<br />
+                            Fragen- und Ereigniskarten<br />
+                            Würfel<br />
                         </p>
                         <p>
-                            <strong>{t('game.preparation')} </strong><br />
-                            {t('game.preparationContent1')}<br />
-                            {t('game.preparationContent2')}<br />
+                            <strong>Spielvorbereitung:</strong><br />
+                            Die Spieler wählen eine Spielfigur und stellen sie auf das Startfeld der Plattform.<br />
+                            Die Karten für Fragen und Ereignisse werden gemischt und bereitgelegt.<br />
                         </p>
                     </div>
                 </div>
                 <div className={"pair-container"}>
                     <div className={"frame"}>
-                        <h2>
-                            {t('other.title')}
-                        </h2>
+                        <h2>Weiteres</h2>
                         <p>
-                            {t('other.description1')}<br/>
-                            {t('other.description2')}
+                            Nachhaltig gedruckt, umweltbewusst gespielt!<br/>
+                            Unsere Spielfiguren und Würfel werden mit dem Bambu Lab P1S 3D-Drucker aus recycelbarem Material gefertigt – präzise, hochwertig und umweltschonend. Auch das Spielbrett und die Verpackung bestehen aus recycelten Materialien.
                         </p>
                         <p>
-                            {t('other.description3')}
+                            So verbinden wir unsere Produktion mit Nachhaltigkeit und bieten euch ein Spiel, das nicht nur Spaß macht, sondern auch die Umwelt schont!
                         </p>
                     </div>
                     <div className={"small-container"}>
