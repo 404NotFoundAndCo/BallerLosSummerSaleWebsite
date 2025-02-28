@@ -3,6 +3,7 @@ import '../App.css';
 import "./ContactForm.css";
 
 const ContactForm: React.FC = () => {
+    const {t} = useTranslation();
     const [formData, setFormData] = useState({
         first_name: "",
         last_name: "",
@@ -68,7 +69,7 @@ const ContactForm: React.FC = () => {
                         className="input"
                         type="text"
                         name="first_name"
-                        placeholder="Vorname *"
+                        placeholder={t('contact.firstName')}
                         value={formData.first_name}
                         onChange={handleChange}
                         required
@@ -80,7 +81,7 @@ const ContactForm: React.FC = () => {
                         className="input"
                         type="text"
                         name="last_name"
-                        placeholder="Nachname *"
+                        placeholder={t('contact.lastName')}
                         value={formData.last_name}
                         onChange={handleChange}
                         required
@@ -95,7 +96,7 @@ const ContactForm: React.FC = () => {
                         className="input"
                         type="email"
                         name="user_email"
-                        placeholder="E-Mail *"
+                        placeholder={t('contact.email')}
                         value={formData.user_email}
                         onChange={handleChange}
                         required
@@ -121,7 +122,7 @@ const ContactForm: React.FC = () => {
                     <textarea
                         className="message"
                         name="message"
-                        placeholder="Nachricht *"
+                        placeholder={t('contact.message')}
                         value={formData.message}
                         onChange={handleChange}
                         required
@@ -131,7 +132,7 @@ const ContactForm: React.FC = () => {
 
 
             <p className="hint">
-                <strong>Hinweis:</strong> Felder mit * müssen ausgefüllt werden.
+                <strong>{t('contact.hintTitle')} </strong> {t('contact.hintContent')}
             </p>
 
             <button type="submit" className="custom-btn" disabled={isSubmitting}>

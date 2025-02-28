@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./Navbar.css";
 import '../App.css';
 import { useTranslation } from "react-i18next";
+import './18n.tsx';
 
 const Navbar: React.FC = () => {
 
