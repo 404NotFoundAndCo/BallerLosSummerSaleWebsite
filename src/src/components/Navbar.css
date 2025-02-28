@@ -1,46 +1,81 @@
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     min-height: 60px;
     line-height: 60px;
-    transition: all 0.3s ease-in-out;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background: #222;
+    padding: 0 40px;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 .navbar-brand {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    text-decoration: none;
     font-size: 26px;
-    padding-left: 40px;
+    color: white;
+    text-decoration: none;
 }
 
-.icon-container {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    padding-right: 30px;
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.montserrat-font {
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+.navbar-nav li {
+    display: inline;
 }
 
-.fustat-font {
-    font-family: 'Fustat', sans-serif;
-}
-
-.navbar-nav > li > a {
+.navbar-nav a {
+    text-decoration: none;
+    color: white;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     transition: 0.3s;
 }
 
-.navbar-nav > li > a:hover {
+.navbar-nav a:hover {
+    color: #f39c12;
+}
+
+/* Burger-Menü Button */
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: #222;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+
+    .navbar-nav li {
+        padding: 10px 0;
+    }
 }
 
