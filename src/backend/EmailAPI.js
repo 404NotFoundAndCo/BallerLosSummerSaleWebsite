@@ -35,6 +35,7 @@ app.post('/send-email', async (req, res) => {
                 last_name,
                 user_email,
                 message,
+                subject
             },
             { publicKey,  privateKey}
         );
