@@ -19,7 +19,65 @@ i18n
                         subtitle: "Playing to protect water"
                     },
                     aboutUs: {
-                        title: 'About Us',
+                        title: "About Us",
+                        description1:"This is our student company \„Baller los\", which means something like starting with full force",
+                        description2: "– and that's what we do.",
+                        description3: 'We are making our own game and want to use this game to raise awareness of environment protection,',
+                        description4: 'especially in the waters. Therefore it goes without saying that we',
+                        description5: 'produce our game as environmentally friendly and high quality as possible.',
+                        description6: 'We use a 3D printer with recyclable and even recycled filament to make our',
+                        description7: 'figures ourself. Also the other materials such as game board and',
+                        description8: 'packaging is recyclable or made from recycled material.',
+                        description9: 'We are also investigating the pollution in the Ilmenau (this river flows through',
+                        description10: 'Lüneburg), by collecting and counting plastic waste.'
+                    },
+                    team: {
+                        title: 'The team',
+                        description1: 'We are the HA24B!',
+                        description2: 'We are 24 students aged 15 to 18. We founded this student company',
+                        description3: 'as part of the one-year vocational school for business at BBS I Lüneburg.',
+                        description4: 'For this website we cooperate with the Lüneburg IT company “Webnetz” and the',
+                        description5: 'IT specialist trainees in their 3rd year from the IT22B class from our school.',
+                    },
+                    game: {
+                        title: 'The game rules',
+                        playerNumber: 'Number of players:',
+                        playerNumberContent: '2 to 6 players',
+                        age: 'Age:',
+                        ageContent: '12 to 99 years',
+                        time: 'Playing time:',
+                        timeContent: '10 to 15 minutes',
+                        material: 'Game materials:',
+                        materialContent1: 'Game board with fields (question fields with question marks, event fields with exclamation marks)',
+                        materialContent2: 'Game pieces for each player',
+                        materialContent3: 'Question and event cards',
+                        materialContent4: 'Dice',
+                        preparation: 'Game preparation:',
+                        preparationContent1: 'The players choose a character and place it on the starting field of the platform.',
+                        preparationContent2: 'The cards for questions and events are shuffled and laid out.'
+                    },
+                    other: {
+                        title: 'More',
+                        description1: 'Sustainably printed, environmentally conscious played!',
+                        description2: 'Our game pieces and dice are made from recyclable material using the Bambu Lab P1S 3D printer - precise, high-quality and environmentally friendly. The game board and packaging are also made from recycled materials.',
+                        description3: 'This is how we combine our production with sustainability and offer you a game that is not only fun, but also protects the environment!'
+                    },
+                    contact: {
+                        firstName: 'First name *',
+                        lastName: 'Last name *',
+                        email: 'E-mail *',
+                        subject: 'Subject',
+                        message: 'Message *',
+                        hintTitle: 'Hint:',
+                        hintContent: 'Fields with * must be filled out.',
+                    },
+                    footer: {
+                        privacyPolicy: 'Privacy Policy',
+                        imprint: 'Imprint',
+                        location: 'Location',
+                        telephone: 'Telephone number',
+                        instagram: 'Instagram',
+                        year: '2024'
                     }
                 }
             },
