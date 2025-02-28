@@ -6,21 +6,16 @@
     width: 100%;
     margin: auto;
     padding-top: 50px;
+    text-align: center; /* Sorgt für zentrierten Text */
 }
 
-.footer-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    transform: translateY(-25%);
-    padding-right: 30px;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
+.footer-text,
 .footer-text-bottom {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     transform: translateY(-25%);
-    padding-right: 30px;
+    padding: 10px; /* Statt nur rechts Padding für bessere Skalierung */
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .footer-border {
@@ -28,7 +23,34 @@
     border: none;
 }
 
+/* Hover-Effekt */
 .footer-text:hover {
-    transform: scale(1); /* Vergrößert den Link leicht */
+    transform: scale(1.05); /* Leichtes Vergrößern */
     text-decoration: none;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .footer-container {
+        padding-top: 30px;
+    }
+
+    .footer-text,
+    .footer-text-bottom {
+        font-size: 14px;
+        transform: translateY(0);
+        padding: 5px; /* Weniger Abstand für kleinere Displays */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding-top: 20px;
+    }
+
+    .footer-text,
+    .footer-text-bottom {
+        font-size: 12px;
+        padding: 3px;
+    }
 }

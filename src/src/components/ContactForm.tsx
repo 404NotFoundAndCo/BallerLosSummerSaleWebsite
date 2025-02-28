@@ -102,7 +102,7 @@ const ContactForm: React.FC = () => {
                     />
                 </div>
                 <div className="input-field">
-                    <i className="bi bi-envelope h3"></i>
+                    <i className="bi bi-pencil h3"></i>
                     <input
                         className="input"
                         type="betreff"

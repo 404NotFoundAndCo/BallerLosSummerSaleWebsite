@@ -146,11 +146,11 @@ body {
   }
   .contact-container {
     background: #2f3d5c;
-
     border: 5px solid transparent;
     border-image: linear-gradient(315deg, rgba(152, 212, 246, 0.47) 0%, rgba(149, 192, 248, 0.71) 74%) 1; /* Verlauf auf die Border */
     box-shadow: inset 7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
+    overflow: hidden;
   }
   .input {
     border-bottom: 1px solid #ffffff;
