@@ -44,58 +44,41 @@ body {
 .pair-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* Zentriert die Container */
   align-items: stretch;
   width: calc(100% - 2vw);
   max-width: 2000px;
   margin: 1vw auto;
+  gap: 1vw; /* Gleichmäßiger Abstand zwischen den Containern */
 }
 
 .small-container {
   position: relative;
+  align-items: center;
+  padding: 20px; /* Innenabstand */
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Verhindert Überlauf */
 }
 
 .frame,
 .small-container {
   vertical-align: top;
-  flex: 1;
+  flex: 1 1 0; /* Alle gleich breit */
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  align-items: center;
   box-sizing: border-box;
   border-radius: 20px;
   width: 100%;
-  max-width: 1000px;
   margin: 0;
 }
 
-.pair-container > .frame:first-child {
-  margin-right: 1vw;
-}
-
-.pair-container > .small-container:first-child {
-  margin-right: 1vw;
-}
-
 .small-container img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%; /* Skaliert mit dem Container */
-  height: 90%; /* Skaliert mit dem Container */
-  object-fit: contain;
-  border-radius: 20px;
-}
-
-.small-container img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   max-width: 100%;
-  max-height: 90%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 20px;
 }
@@ -114,7 +97,6 @@ body {
   line-height: 1.6;
 }
 
-/* Mobile Anpassungen */
 @media (max-width: 768px) {
   .pair-container {
     flex-direction: column;
@@ -164,9 +146,10 @@ body {
   }
   .contact-container {
     background: #2f3d5c;
-    border: 5px solid #3d466a;
-    box-shadow: inset 2px 2px 2px 0 rgba(59, 75, 113, 0.5),
-    7px 7px 20px 0 rgba(0,0,0,.1),
+
+    border: 5px solid transparent;
+    border-image: linear-gradient(315deg, rgba(152, 212, 246, 0.47) 0%, rgba(149, 192, 248, 0.71) 74%) 1; /* Verlauf auf die Border */
+    box-shadow: inset 7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
   }
   .input {
@@ -243,7 +226,7 @@ body {
   .contact-container {
     background-color: #A5CAF0;
     border: 5px solid #d5e8f6;
-    box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
+    box-shadow: inset
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
   }

@@ -7,11 +7,12 @@ import printer from "./images/Drucker.png";
 import Footer from "./components/Footer.tsx";
 import ContactForm from "./components/ContactForm.tsx";
 import {useEffect} from "react";
-import { useTranslation, Trans } from 'react-i18next';
+import {useTranslation,} from 'react-i18next';
+import './i18n.tsx';
 
 const App = () => {
 
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     useEffect(() => {
         document.title = "Baller LOS";
@@ -23,14 +24,10 @@ const App = () => {
             <div className={"headline-container"}>
                 <div className="text-container">
                     <h1 className="title">
-                        <Trans i18nKey="webpage.title">
-                            Ein Schülerunternehmen der BBS 1 Lüneburg mit <em>Meerwert</em>
-                        </Trans>
+                        {t('webpage.title')}
                     </h1>
                     <p className="subtitle">
-                        <Trans i18nKey="webpage.subtitle">
-                            Spielend Wasser
-                        </Trans>
+                        {t('webpage.subtitle')}
                     </p>
                 </div>
             </div>
@@ -43,64 +40,37 @@ const App = () => {
                     <div className="frame">
                         <h2>Über uns</h2>
                         <p>
-                            Moin, wir sind die HA24B!
-                            Das ist unsere Schülerfirma <strong>„Baller los“</strong>, was so viel wie „mit voller Kraft
-                            loslegen“ bedeutet – und das machen
-                            wir.
-
-                            Wir sind <strong>24 Schülerinnen und Schüler</strong> im Alter von 15 bis 18 Jahren. Diese
-                            Schülerfirma haben wir im Rahmen der
-                            einjährigen Berufsfachschule Wirtschaft an der <strong>BBS I Lüneburg</strong> gegründet.
+                            Das ist unsere Schülerfirma „Baller los", was so viel heißt, wie mit voller Kraft loslegen
+                            bedeutet – und das machen wir.
                         </p>
                         <p>
-                            Wir stellen ein eigenes Spiel her und wollen mit diesem Spiel auf
-                            den <strong>Umweltschutz</strong>, besonders bei den Gewässern,
-                            aufmerksam machen. Daher ist es selbstverständlich, dass wir unser Spiel
-                            so <strong>umweltfreundlich</strong> und hochwertig wie
-                            möglich
-                            produzieren.
-
-                            Wir nutzen einen <strong>3D-Drucker</strong> mit recyclefähigem und sogar
-                            Recycling-Filament, um unsere Figuren selbst herstellen zu
-                            können. Auch die anderen Materialien wie Spielbrett und Verpackung sind recyclefähig oder
-                            bestehen aus Recyclingmaterial.
+                            Wir stellen ein eigenes Spiel her und wollen mit diesem Spiel auf den Umweltschutz,
+                            besonders bei den Gewässern, aufmerksam machen. Daher ist es selbstverständlich, dass wir
+                            unser Spiel so umweltfreundlich und hochwertig wie möglich produzieren.
                         </p>
                         <p>
-                            Zusätzlich untersuchen wir die <strong>Verschmutzung der Ilmenau</strong> (dieser Fluss
-                            fließt durch Lüneburg), indem wir
-                            Plastikmüll
-                            einsammeln und zählen.
-
-                            Für diese Website kooperieren wir mit dem Lüneburger
-                            IT-Unternehmen <strong>„webnetz“</strong> und den <strong>Auszubildenden zum
-                            Fachinformatiker im 3. Lehrjahr</strong> aus der Klasse IT22B von unserer Schule.
+                            Wir nutzen einen 3D-Drucker mit recycle fähigem und sogar Recycling-Filament, um unsere
+                            Figuren selbst herstellen zu können. Auch die anderen Materialien wie Spielbrett und
+                            Verpackung sind recycle fähig oder bestehen aus recyclingmaterial.
+                        </p>
+                        <p>
+                            Zusätzlich untersuchen wir die Verschmutzung der Ilmenau (dieser Fluss fließt durch
+                            Lüneburg), indem wir Plastikmüll einsammeln und zählen.
                         </p>
                     </div>
                 </div>
                 <div className={"pair-container"}>
                     <div className={"frame"}>
                         <h2>Das Team</h2>
-                        <p> Wir sind die <strong>HA24B</strong> – eine Schülerfirma der <strong>BBS 1 Lüneburg</strong>,
-                            bestehend aus <strong>24 Schülerinnen und
-                                Schülern</strong> im Alter von 16 bis 19 Jahren. Im Rahmen der einjährigen
-                            Berufsfachschule Wirtschaft haben wir ein innovatives und
-                            nachhaltiges Spiel entwickelt.
+                        <p>
+                            Wir sind die HA24B!<br />
+                            Wir sind 24 Schülerinnen und Schüler im Alter von 15 bis 18 Jahren. Diese Schülerfirma haben
+                            wir im Rahmen der einjährigen Berufsfachschule Wirtschaft an der BBS I Lüneburg gegründet.
                         </p>
-                        <p> Unser Fokus liegt auf <strong>Umweltbewusstsein</strong>, insbesondere auf dem <strong>Schutz
-                            unserer Gewässer</strong>. Daher werden
-                            alle
-                            Spielfiguren und der Würfel mit <strong>recycelbarem
-                                Material</strong> in <strong>3D</strong> gedruckt, ebenso wie das Spielbrett und
-                            die
-                            Verpackung, die aus Recyclingmaterialien bestehen. </p> <p> Zusätzlich engagieren wir uns in
-                        der Untersuchung der <strong>Wasserverschmutzung
-                            der Illmenau</strong>. Für die Gestaltung unserer Website arbeiten wir eng mit dem
-                        Lüneburger
-                        IT-Unternehmen <strong>„webnetz“</strong> zusammen, unterstützt von den Auszubildenden der
-                        Klasse <strong>IT22B</strong> unserer Schule.
-                    </p>
-                        <p> Wir sind stolz darauf, ein Projekt zu präsentieren, das sowohl kreatives Denken als auch
-                            Verantwortung für unsere Umwelt vereint. </p>
+                        <p>
+                            Für diese Website kooperieren wir mit dem Lüneburger IT-Unternehmen „Webnetz“ und den
+                            Auszubildenden zum Fachinformatiker im 3. Lehrjahr aus der Klasse IT22B von unserer Schule.
+                        </p>
                         <a href="https://www.instagram.com/bbs1lg/" className="footer-text"><i
                             className="bi bi-instagram h1"></i></a>
                     </div>
@@ -116,12 +86,36 @@ const App = () => {
                         <img src={game} alt="Bild"/>
                     </div>
                     <div className={"frame"}>
-                        <h2>Das Brettspiel</h2>
+                        <h2>Die Spielregeln</h2>
+                        <p>
+                            <strong>Spieleranzahl:</strong> 2 bis 6 Spieler <br />
+                            <strong>Alter:</strong> 12 bis 99 Jahre <br />
+                            <strong>Spieldauer:</strong> 10 bis 15 Minuten
+                        </p>
+                        <p>
+                            <strong>Spielmaterialien:</strong><br />
+                            Spielbrett mit Feldern (Fragefelder mit Fragezeichen, Ereignisfelder mit Ausrufezeichen)<br />
+                            Spielfiguren für jeden Spieler<br />
+                            Fragen- und Ereigniskarten<br />
+                            Würfel<br />
+                        </p>
+                        <p>
+                            <strong>Spielvorbereitung:</strong><br />
+                            Die Spieler wählen eine Spielfigur und stellen sie auf das Startfeld der Plattform.<br />
+                            Die Karten für Fragen und Ereignisse werden gemischt und bereitgelegt.<br />
+                        </p>
                     </div>
                 </div>
                 <div className={"pair-container"}>
                     <div className={"frame"}>
                         <h2>Weiteres</h2>
+                        <p>
+                            Nachhaltig gedruckt, umweltbewusst gespielt!<br/>
+                            Unsere Spielfiguren und Würfel werden mit dem Bambu Lab P1S 3D-Drucker aus recycelbarem Material gefertigt – präzise, hochwertig und umweltschonend. Auch das Spielbrett und die Verpackung bestehen aus recycelten Materialien.
+                        </p>
+                        <p>
+                            So verbinden wir unsere Produktion mit Nachhaltigkeit und bieten euch ein Spiel, das nicht nur Spaß macht, sondern auch die Umwelt schont!
+                        </p>
                     </div>
                     <div className={"small-container"}>
                         <img src={printer} alt="Bild"/>

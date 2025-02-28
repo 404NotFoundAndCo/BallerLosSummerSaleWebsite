@@ -99,6 +99,18 @@ const ContactForm: React.FC = () => {
                         required
                     />
                 </div>
+                <div className="input-field">
+                    <i className="bi bi-envelope h3"></i>
+                    <input
+                        className="input"
+                        type="betreff"
+                        name="betreff"
+                        placeholder="Betreff"
+                        //value={formData.user_email}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
             </div>
 
             <div className="input-group">
@@ -115,6 +127,7 @@ const ContactForm: React.FC = () => {
                 </div>
             </div>
 
+
             <p className="hint">
                 <strong>Hinweis:</strong> Felder mit * müssen ausgefüllt werden.
             </p>
@@ -122,6 +135,7 @@ const ContactForm: React.FC = () => {
             <button type="submit" className="custom-btn" disabled={isSubmitting}>
                 {isSubmitting ? "Senden..." : "Senden"}
             </button>
+
         </div>
     );
 };
