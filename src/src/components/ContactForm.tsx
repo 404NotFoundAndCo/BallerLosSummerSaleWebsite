@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./ContactForm.css";
 import '../App.css';
+import "./ContactForm.css";
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -8,6 +8,7 @@ const ContactForm: React.FC = () => {
         last_name: "",
         user_email: "",
         message: "",
+        subject: ""
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,6 +46,7 @@ const ContactForm: React.FC = () => {
                     last_name: "",
                     user_email: "",
                     message: "",
+                    subject: ""
                 });
             } else {
                 const error = await response.json();
@@ -104,9 +106,9 @@ const ContactForm: React.FC = () => {
                     <input
                         className="input"
                         type="betreff"
-                        name="betreff"
-                        placeholder="Betreff"
-                        //value={formData.user_email}
+                        name="subject"
+                        placeholder="Betreff *"
+                        value={formData.subject}
                         onChange={handleChange}
                         required
                     />
