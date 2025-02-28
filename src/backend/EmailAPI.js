@@ -20,9 +20,9 @@ const templateID = 'template_7bvvckq';
 
 // Endpoint to send email
 app.post('/send-email', async (req, res) => {
-    const { first_name, last_name, user_email, message } = req.body;
+    const { first_name, last_name, user_email, message, subject } = req.body;
 
-    if (!first_name || !last_name || !user_email || !message) {
+    if (!first_name || !last_name || !user_email || !message || !subject) {
         return res.status(400).json({ error: 'All fields are required.' });
     }
 
