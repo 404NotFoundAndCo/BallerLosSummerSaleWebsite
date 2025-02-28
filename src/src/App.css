@@ -191,7 +191,7 @@ body {
 }
 
 .light-mode {
-  background-image: linear-gradient(to bottom, #F7F7F7, rgba(184, 210, 241, 0.96));
+  background-image: linear-gradient(to bottom, #F7F7F7, #F7F7F7);
   color: #161b39;
   .title {
     /*text-shadow: 0 4px 5px rgb(97, 123, 202);*/
@@ -201,9 +201,9 @@ body {
     font-weight: bold;
   }
   .headline-container {
-    background-image: url('./images/Waves4.png');
+    background-image: url('./images/Surf.jpg');
     z-index: -1;
-    background-color: rgba(180, 208, 244, 0.95);
+    background-color: rgba(180, 208, 244, 0.71);
     background-blend-mode: overlay;
     box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
     7px 7px 20px 0 rgba(0,0,0,.1),
