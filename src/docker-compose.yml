@@ -1,0 +1,19 @@
+services:
+  node:
+    image: "node:current"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes: 
+      - ./:/home/node/app
+    command: bash -c "npm install --include=dev && npm run build"
+  web:
+    build: .
+    ports:
+      - "${EXTERNAL_PORT}:${NGINX_PORT}"
+    volumes: 
+      - ./dist:/usr/share/nginx/html
+      #- ./nginx:/etc/nginx/conf.d
+    environment:
+      - NGINX_HOST=$NGINX_HOST
+      - NGINX_PORT=$NGINX_PORT

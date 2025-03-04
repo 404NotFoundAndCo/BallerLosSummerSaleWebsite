@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import '../App.css';
 import "./ContactForm.css";
 import {useTranslation,} from 'react-i18next';
-import './i18n.tsx';
+import '../i18n.tsx';
 
 const ContactForm: React.FC = () => {
     const {t} = useTranslation();
