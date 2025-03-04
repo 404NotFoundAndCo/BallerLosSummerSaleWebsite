@@ -13,7 +13,6 @@
 - hosting - zum testen vom Hosten der Website# wizards-web-craft-page
 
 ## Deployment
-Grant executable permissions to src/node_modules/.bin/rsbuild (`chmod +x node_modules/.bin/rsbuild`).
 Start docker from src directory with `docker compose up`.
 
 Make sure to set the following variables in the `.env` file in the projects root directory:
