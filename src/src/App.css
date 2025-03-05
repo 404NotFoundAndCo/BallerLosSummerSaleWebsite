@@ -146,11 +146,11 @@ body {
   }
   .contact-container {
     background: #2f3d5c;
-
     border: 5px solid transparent;
     border-image: linear-gradient(315deg, rgba(152, 212, 246, 0.47) 0%, rgba(149, 192, 248, 0.71) 74%) 1; /* Verlauf auf die Border */
     box-shadow: inset 7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
+    clip-path: inset(0 round 10px); /* Apply rounded corners */
   }
   .input {
     border-bottom: 1px solid #ffffff;
@@ -191,7 +191,7 @@ body {
 }
 
 .light-mode {
-  background-image: linear-gradient(to bottom, #F7F7F7, rgba(184, 210, 241, 0.96));
+  background-image: linear-gradient(to bottom, #F7F7F7, #F7F7F7);
   color: #161b39;
   .title {
     /*text-shadow: 0 4px 5px rgb(97, 123, 202);*/
@@ -201,9 +201,9 @@ body {
     font-weight: bold;
   }
   .headline-container {
-    background-image: url('./images/Waves4.png');
+    background-image: url('./images/Surf.jpg');
     z-index: -1;
-    background-color: rgba(180, 208, 244, 0.95);
+    background-color: rgba(180, 208, 244, 0.71);
     background-blend-mode: overlay;
     box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
     7px 7px 20px 0 rgba(0,0,0,.1),
@@ -238,7 +238,6 @@ body {
   }
   .footer-text {
     color: rgb(31, 32, 53);
-    text-shadow: 0 4px 5px rgb(97, 123, 202);
   }
   .footer-border {
     border-top: 2px solid #d5e8f6;
@@ -252,11 +251,11 @@ body {
   }
   .navbar-brand {
     color: rgb(31, 32, 53) !important;
-    text-shadow: 0 4px 5px rgb(97, 123, 202);
+    /* text-shadow: 0 4px 5px rgb(97, 123, 202); */
   }
-  .icon-container {
+  /* .icon-container {
     text-shadow: 0 4px 5px rgb(97, 123, 202);
-  }
+  } */
   .navbar-nav > li > a {
     color: rgb(31, 32, 53) !important;
     font-family: 'Inter', sans-serif;
