@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import "./ContactForm.css";
 import '../App.css';
+import "./ContactForm.css";
+import {useTranslation,} from 'react-i18next';
+import './i18n.tsx';
 
 const ContactForm: React.FC = () => {
+    const {t} = useTranslation();
+
     const [formData, setFormData] = useState({
         first_name: "",
         last_name: "",
         user_email: "",
         message: "",
+        subject: ""
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,6 +50,7 @@ const ContactForm: React.FC = () => {
                     last_name: "",
                     user_email: "",
                     message: "",
+                    subject: ""
                 });
             } else {
                 const error = await response.json();
@@ -66,7 +72,7 @@ const ContactForm: React.FC = () => {
                         className="input"
                         type="text"
                         name="first_name"
-                        placeholder="Vorname *"
+                        placeholder={t('contact.firstName')}
                         value={formData.first_name}
                         onChange={handleChange}
                         required
@@ -78,7 +84,7 @@ const ContactForm: React.FC = () => {
                         className="input"
                         type="text"
                         name="last_name"
-                        placeholder="Nachname *"
+                        placeholder={t('contact.lastName')}
                         value={formData.last_name}
                         onChange={handleChange}
                         required
@@ -93,20 +99,20 @@ const ContactForm: React.FC = () => {
                         className="input"
                         type="email"
                         name="user_email"
-                        placeholder="E-Mail *"
+                        placeholder={t('contact.email')}
                         value={formData.user_email}
                         onChange={handleChange}
                         required
                     />
                 </div>
                 <div className="input-field">
-                    <i className="bi bi-envelope h3"></i>
+                    <i className="bi bi-pencil h3"></i>
                     <input
                         className="input"
                         type="betreff"
-                        name="betreff"
-                        placeholder="Betreff"
-                        //value={formData.user_email}
+                        name="subject"
+                        placeholder={t('contact.subject')}
+                        value={formData.subject}
                         onChange={handleChange}
                         required
                     />
@@ -119,7 +125,7 @@ const ContactForm: React.FC = () => {
                     <textarea
                         className="message"
                         name="message"
-                        placeholder="Nachricht *"
+                        placeholder={t('contact.message')}
                         value={formData.message}
                         onChange={handleChange}
                         required
@@ -129,7 +135,7 @@ const ContactForm: React.FC = () => {
 
 
             <p className="hint">
-                <strong>Hinweis:</strong> Felder mit * müssen ausgefüllt werden.
+                <strong>{t('contact.hintTitle')}</strong> {t('contact.hintContent')}
             </p>
 
             <button type="submit" className="custom-btn" disabled={isSubmitting}>
