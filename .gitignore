@@ -1,3 +1,5 @@
+.idea
+src/.idea
 src/dist
 src/node_modules
 src/package-lock.json
