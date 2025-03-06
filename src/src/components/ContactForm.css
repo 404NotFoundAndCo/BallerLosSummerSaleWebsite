@@ -75,39 +75,52 @@
     }
 }
 
+.custom-btn {
+    position: relative; /* Wichtig für :after */
+    overflow: hidden;
 
-
-
-.custom-btn
-{
-    margin: 0 100px 0 100px;
-    width: 10vw;
-    height: 6vh;
+    margin: 10px auto; /* Zentrieren mit Abstand */
+    width: 10rem;
+    height: 3rem;
+    min-width: 80px; /* Sicherstellen, dass der Button nicht zu klein wird */
+    min-height: 40px;
     border-radius: 5px;
-    padding: 2px; /* Innenabstand des Buttons (oben/unten, links/rechts) */
+    padding: 5px;
 
     cursor: pointer;
     transition: all 0.3s ease;
 
-    position: relative; /* Positionierung des Buttons relativ zu seinem Elternelement */
-
     display: inline-block;
+    text-align: center;
+
     box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
     outline: none;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    font-size: 100%;
+    font-size: 1.3rem;
 
-    background: transparent linear-gradient(315deg, rgba(152, 212, 246, 0.47) 0%, rgba(149, 192, 248, 0.71) 74%);
+    background: linear-gradient(315deg, rgba(152, 212, 246, 0.47) 0%, rgba(149, 192, 248, 0.71) 74%);
     border: none;
     z-index: 1;
 }
 
+@media (max-width: 768px) {
+    .custom-btn {
+        width: 8rem;
+        height: 2.8rem;
+        font-size: 0.9rem;
+    }
+}
 
-
-
+@media (max-width: 480px) {
+    .custom-btn {
+        width: 7rem;
+        height: 2.5rem;
+        font-size: 0.8rem;
+    }
+}
 
 .custom-btn:hover
 {
@@ -116,10 +129,10 @@
 
 .custom-btn:after
 {
+    height: 0;
     position: absolute;
     content: "";
     width: 100%;
-    height: 0;
     bottom: 0;
     left: 0;
     z-index: -1;
@@ -132,15 +145,11 @@
     transition: all 0.3s ease;
 }
 
-
-
-
-
-
 .custom-btn:hover:after
 {
-    top: 0;
+    bottom: auto;
     height: 100%;
+    top: 0;
 }
 
 .custom-btn:active
