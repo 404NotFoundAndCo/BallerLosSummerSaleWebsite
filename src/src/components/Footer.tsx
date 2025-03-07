@@ -11,11 +11,11 @@ const Footer: React.FC = () => {
         <footer className="footer-container">
 
             <nav className="mb-3">
-                <a href="#" className="footer-text"><i className="bi bi-shield"></i> {t('footer.privacyPolicy')} 
+                <a href="https://www.bbs1-lueneburg.de/datenschutz.html" className="footer-text"><i className="bi bi-shield"></i> {t('footer.privacyPolicy')}
             </a>
             <a href="https://www.bbs1-lueneburg.de/impressum.html" className="footer-text"><i className="bi bi-journal-text"></i> {t('footer.imprint')} </a>
                 <a href="https://www.google.de/maps/place/Berufsbildende+Schulen+I/@53.2478929,10.4208341,16z/data=!3m1!4b1!4m6!3m5!1s0x47b1ddd7656204bb:0xf16f2a9adcf3142f!8m2!3d53.2478897!4d10.423409!16s%2Fg%2F1tfc1234?entry=ttu&g_ep=EgoyMDI1MDIyNS4wIKXMDSoASAFQAw%3D%3D" className="footer-text"><i className="bi bi-geo-alt"></i> {t('footer.location')} </a>
-                <a href="#" className="footer-text"><i className="bi bi-telephone"></i> Nummer {t('footer.telephone')}</a>
+                <a href="https://www.google.com/search?client=firefox-b-d&q=bbs1-lueneburg#" className="footer-text"><i className="bi bi-telephone"></i> {t('footer.telephone')}</a>
                 <a href="https://www.instagram.com/bbs1lg/" className="footer-text"><i className="bi bi-instagram"></i> {t('footer.instagram')} </a>
             </nav>
 

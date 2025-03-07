@@ -75,7 +75,7 @@ i18n
                         privacyPolicy: 'Privacy Policy',
                         imprint: 'Imprint',
                         location: 'Location',
-                        telephone: 'Telephone number',
+                        telephone: 'Call',
                         instagram: 'Instagram',
                         year: '2024'
                     }
@@ -144,7 +144,7 @@ i18n
                         privacyPolicy: 'Datenschutz',
                         imprint: 'Impressum',
                         location: 'Ort',
-                        telephone: 'Nummer',
+                        telephone: 'Anruf',
                         instagram: 'Instagram',
                         year: '2024'
                     }

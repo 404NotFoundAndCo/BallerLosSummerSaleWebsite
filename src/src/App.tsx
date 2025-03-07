@@ -75,8 +75,6 @@ const App = () => {
                             {t('team.description4')}
                             {t('team.description5')}
                         </p>
-                        <a href="https://www.instagram.com/bbs1lg/" className="footer-text"><i
-                            className="bi bi-instagram h1"></i></a>
                     </div>
                     <div className={"small-container"}>
                         <img src={group} alt="Bild"/>

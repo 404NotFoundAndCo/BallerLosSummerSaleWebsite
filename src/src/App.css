@@ -44,47 +44,44 @@ body {
 .pair-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Zentriert die Container */
-  align-items: stretch;
+  justify-content: center;
+  align-items: stretch; /* Sorgt dafür, dass frame und small-container gleich hoch sind */
   width: calc(100% - 2vw);
   max-width: 2000px;
   margin: 1vw auto;
-  gap: 1vw; /* Gleichmäßiger Abstand zwischen den Containern */
-}
-
-
-.small-container {
-  position: relative;
-  display: flex;
-  align-items: center;  /* Vertikale Zentrierung */
-  justify-content: center; /* Horizontale Zentrierung */
-  padding: 20px;  /* Innenabstand bleibt erhalten */
-  overflow: hidden; /* Verhindert Überlauf des Bildes */
-
+  gap: 1vw;
 }
 
 .frame,
 .small-container {
-  vertical-align: top;
-  flex: 1 1 calc(50% - 0.5vw); /* Genau 50% minus halber Abstand */
+  flex: 1 1 calc(50% - 0.5vw);
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   box-sizing: border-box;
   border-radius: 20px;
-  width: auto; /* Statt 100%, damit flex richtig greift */
+  width: auto;
   margin: 0;
+  height: 100%; /* Stellt sicher, dass beide gleich hoch sind */
+}
+
+.small-container {
+  position: relative;
+  display: flex;
+  align-items: center; /* Bild vertikal zentrieren */
+  justify-content: center; /* Bild horizontal zentrieren */
+  padding: 20px;
+  overflow: hidden;
 }
 
 .small-container img {
   max-width: 100%;
   max-height: 100%;
   width: auto;
-  height: 100%; /* Höhe des Containers ausnutzen */
+  height: auto;
   object-fit: contain;
   border-radius: 20px;
   display: block;
-  align-self: center; /* Vertikale Zentrierung */
 }
 
 .frame h2 {
@@ -102,10 +99,25 @@ body {
 }
 
 @media (max-width: 768px) {
+  .headline-container {
+    flex: 1 1 100%;
+    width: calc(100% - 10vw); /* Gleicher Randabstand */
+    margin: 1vw auto; /* Gleicher Außenabstand */
+    height: 35vh; /* Reduzierte Höhe */
+  }
+
   .pair-container {
     flex-direction: column;
     align-items: center;
     width: 100%;
+  }
+
+  .frame {
+    order: -1; /* Bringt den frame IMMER an erste Stelle */
+  }
+
+  .small-container {
+    order: 0; /* Small-Container bleibt danach */
   }
 
   .frame, .small-container {
@@ -174,6 +186,9 @@ body {
     background-color: #242e47;
     border-bottom: 2px solid #3d466a;
   }
+  .navbar-nav a:hover {
+    color: #3d466a;
+  }
   .navbar-brand {
     color: white !important;
     text-shadow: 0 4px 5px black;
@@ -189,6 +204,12 @@ body {
   }
   .navbar-nav > li > a:hover {
     color: #3d466a !important;
+  }
+  @media (max-width: 768px) {
+    .navbar-nav {
+      color: white;
+      background: #242e47;
+    }
   }
 }
 
@@ -208,21 +229,21 @@ body {
     4px 4px 5px 0 rgba(0,0,0,.1);
   }
   .small-container {
-    background-color: #A5CAF0;
+    background-color: #a5d1f0;
     box-shadow: inset 2px 2px 2px 0 rgba(255,255,255,.5),
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
   }
   .frame {
     background-color: rgba(175, 207, 243, 0.38);
-    border: 5px solid #A5CAF0;
+    border: 5px solid #a5d1f0;
     box-shadow: inset
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
   }
   .contact-container {
-    background-color: #A5CAF0;
-    border: 5px solid #d5e8f6;
+    background-color: #a5d1f0;
+    border: 5px solid rgba(149, 192, 248, 0.71);
     box-shadow: inset
     7px 7px 20px 0 rgba(0,0,0,.1),
     4px 4px 5px 0 rgba(0,0,0,.1);
@@ -243,8 +264,12 @@ body {
     color: white;
   }
   .navbar {
-    background-color: #A5CAF0;
+    background-color: #a5d1f0;
     border-bottom: 2px solid #d5e8f6;
+    color: #161b39;
+  }
+  .navbar-nav a:hover {
+    color: #d5e8f6;
   }
   .navbar-brand {
     color: rgb(31, 32, 53) !important;
@@ -257,5 +282,11 @@ body {
   }
   .navbar-nav > li > a:hover {
     color: white !important;
+  }
+  @media (max-width: 768px) {
+    .navbar-nav {
+      color: #161b39;
+      background: #a5d1f0;
+    }
   }
 }

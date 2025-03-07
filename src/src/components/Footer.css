@@ -41,6 +41,18 @@
         transform: translateY(0);
         padding: 5px; /* Weniger Abstand für kleinere Displays */
     }
+
+    .footer-text {
+        font-size: 0; /* Versteckt den Text, aber das Icon bleibt */
+        display: inline-flex; /* Damit der Abstand funktioniert */
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px; /* Fügt Abstand zwischen den Icons hinzu */
+    }
+
+    .footer-text i {
+        font-size: 18px; /* Falls die Icons größer sein sollen */
+    }
 }
 
 @media (max-width: 480px) {
@@ -52,5 +64,17 @@
     .footer-text-bottom {
         font-size: 12px;
         padding: 3px;
+    }
+
+    .footer-text {
+        font-size: 0; /* Versteckt den Text, aber das Icon bleibt */
+        display: inline-flex; /* Damit der Abstand funktioniert */
+        justify-content: center;
+        align-items: center;
+        margin: 0 12px; /* Fügt Abstand zwischen den Icons hinzu */
+    }
+
+    .footer-text i {
+        font-size: 18px; /* Falls die Icons größer sein sollen */
     }
 }
